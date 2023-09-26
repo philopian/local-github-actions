@@ -17,10 +17,14 @@ jobs:
       run: |
         echo "one"
         echo "two"
+  job_script:
+    runs-on: ubuntu-latest
+    steps:
     - name: bash script
       run: |
+        echo ".????......${{ github.event.repository.name }}"
         if [ "${{ github.event.repository.name }}" == "local-github-actions" ]; then
-          echo ".................YES"
+          echo ".................YES    ${{ github.event.repository.name }}"
         fi
 
 
