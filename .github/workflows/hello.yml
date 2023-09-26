@@ -1,0 +1,26 @@
+
+name: Hello World
+on: 
+  push:
+    branches:
+      - "**"
+
+jobs:
+  job_name:
+    runs-on: ubuntu-latest
+    steps:
+    # - uses: actions/checkout@v2
+    # - uses: actions/setup-node@v1
+    - name: "run one command"
+      run: echo "hello"
+    - name: "multiple commands"
+      run: |
+        echo "one"
+        echo "two"
+    - name: bash script
+      run: |
+        if [ "${{ github.event.repository.name }}" == "local-github-actions" ]; then
+          echo ".................YES"
+        fi
+
+
